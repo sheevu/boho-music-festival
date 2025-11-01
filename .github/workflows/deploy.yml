@@ -1,0 +1,19 @@
+name: deploy
+
+on
+  name: Deploy To GHpages
+  runs: | when: git tup
+
+an:
+  url: https://github.com/sheevu/boho-music-festival.git
+  branch: main
+  path: .staging/
+  max_depth:10
+  local_directory: .staging/ghpages
+  rise:false
+  single_bild: true
+  drupal_auth: false
+  environment:
+    username: GHT_ACTION_USERNAME
+    repo: GHT_ACTION_REPO
+    build_dir:.gh_pages/
